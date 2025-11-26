@@ -45,10 +45,19 @@ const Navbar = () => {
                                     </button>
                                     {isDropdownOpen && (
                                         <div className="dropdown-menu">
+                                            <div className="dropdown-header">
+                                                <p className="user-name">{user.name}</p>
+                                                <p className="user-email">{user.email}</p>
+                                            </div>
+                                            <div className="dropdown-divider"></div>
                                             <Link to="/profile" className="dropdown-item" onClick={() => setIsDropdownOpen(false)}>
                                                 <FiUser /> Profile
                                             </Link>
-                                            <button className="dropdown-item" onClick={handleLogout}>
+                                            <Link to="/dashboard" className="dropdown-item" onClick={() => setIsDropdownOpen(false)}>
+                                                <FiGrid /> Dashboard
+                                            </Link>
+                                            <div className="dropdown-divider"></div>
+                                            <button className="dropdown-item logout-btn" onClick={handleLogout}>
                                                 <FiLogOut /> Logout
                                             </button>
                                         </div>
