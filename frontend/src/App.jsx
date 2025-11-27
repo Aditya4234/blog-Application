@@ -12,6 +12,7 @@ import Dashboard from './pages/Dashboard';
 import Profile from './pages/Profile';
 import TrendingPosts from './pages/TrendingPosts';
 import AuthorProfile from './pages/AuthorProfile';
+import Settings from './pages/Settings';
 
 function App() {
     const { user, loading } = useContext(AuthContext);
@@ -40,6 +41,7 @@ function App() {
                         <Route path="/edit/:id" element={user ? <CreatePost /> : <Navigate to="/login" />} />
                         <Route path="/dashboard" element={user ? <Dashboard /> : <Navigate to="/login" />} />
                         <Route path="/profile" element={user ? <Profile /> : <Navigate to="/login" />} />
+                        <Route path="/settings" element={user ? <Settings /> : <Navigate to="/login" />} />
                     </Routes>
                 </main>
                 <Footer />
