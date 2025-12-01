@@ -9,7 +9,7 @@ async function login() {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        email: 'test@example.com',
+        email: 'john@example.com',
         password: 'password123'
       })
     });
