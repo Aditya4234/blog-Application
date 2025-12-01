@@ -26,7 +26,7 @@ function App() {
     }
 
     return (
-        <Router basename="/bloging">
+        <Router>
             <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
                 <Navbar />
                 <main style={{ flex: 1 }}>
