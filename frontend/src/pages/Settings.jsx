@@ -217,7 +217,7 @@ const Settings = () => {
 
                                 <form onSubmit={handlePasswordChange} className="settings-form">
                                     <div className="form-group">
-                                        <label className="label">
+                                        <label className="label">npm,
                                             <FiLock /> Current Password
                                         </label>
                                         <input
