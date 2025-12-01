@@ -1,4 +1,5 @@
 import express from 'express';
+import fs from 'fs';
 import { body, validationResult } from 'express-validator';
 import User from '../models/User.js';
 import { protect } from '../middleware/auth.js';
@@ -91,6 +92,7 @@ router.post('/login', [
     });
   } catch (error) {
     console.error(error);
+    fs.appendFileSync('error.log', `${new Date().toISOString()} - ${error.stack}\n`);
     res.status(500).json({ message: 'Server error' });
   }
 });

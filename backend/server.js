@@ -1,4 +1,5 @@
 import express from 'express';
+import fs from 'fs';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
@@ -29,6 +30,7 @@ app.get('/', (req, res) => {
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
+  fs.appendFileSync('error.log', `${new Date().toISOString()} - Global - ${err.stack}\n`);
   res.status(500).json({ message: 'Something went wrong!' });
 });
 
